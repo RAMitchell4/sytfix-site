@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Calculate the revenue impact of SEO improvements for your local service business.">
+<meta property="og:title" content="Revenue Calculator | SytFix">
+<meta property="og:description" content="Calculate the revenue impact of SEO improvements for your local service business.">
+<meta property="og:type" content="website">
+<title>Revenue Calculator | SytFix</title>
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+<div id="sf-loader" aria-hidden="true">
+  <svg class="ld-svg" viewBox="75 215 185 175" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0,600) scale(0.1,-0.1)">
+      <path class="ld-arc" fill="#F4F4EE" d="M1510 3680 l0 -40 45 0 45 0 0 40 0 40 -45 0 -45 0 0 -40z"/>
+      <path class="ld-arc" fill="#F4F4EE" d="M1335 3686 c-131 -42 -212 -92 -315 -196 -79 -78 -104 -111 -142 -185 -45 -89 -78 -183 -78 -224 0 -18 6 -21 39 -21 37 0 39 2 46 38 19 106 118 277 204 355 86 78 199 139 309 167 41 10 42 12 42 50 0 48 -5 49 -105 16z"/>
+      <path class="ld-arc" fill="#F4F4EE" d="M1682 3669 c3 -41 3 -42 57 -56 139 -35 300 -153 384 -281 47 -71 91 -172 102 -234 7 -37 8 -38 50 -38 l43 0 -13 58 c-62 263 -260 477 -527 568 -97 33 -100 32 -96 -17z"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="780" y="2820" width="45" height="40"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="2240" y="2821" width="45" height="39"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="1510" y="3840" width="45" height="40"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="1514" y="2186" width="42" height="46"/>
+      <path class="ld-bob" fill="#B8EF1B" d="M1540 3266 l0 -296 -30 0 c-29 0 -30 -2 -30 -44 0 -39 -4 -46 -40 -71 l-40 -28 0 -128 0 -128 76 -108 c41 -59 78 -109 82 -110 4 -1 42 50 85 114 l77 116 0 121 0 121 -45 30 c-41 28 -45 33 -45 73 0 38 -2 42 -25 42 l-25 0 -2 292 c-3 270 -4 293 -20 296 -17 3 -18 -16 -18 -292z"/>
+    </g>
+  </svg>
+  <p class="ld-name">SytFix</p>
+  <p class="ld-tag">Web Auditing &amp; SEO</p>
+</div>
+<div id="sf-bar"></div>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-bg"></div>
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo" aria-label="SytFix home">
+      <img src="img/logo.svg" alt="SytFix" class="nav-logo-img">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="services.html" class="">Services</a></li>
+      <li><a href="process.html" class="">Process</a></li>
+      <li><a href="case-studies.html" class="">Case Studies</a></li>
+      <li><a href="pricing.html" class="">Pricing</a></li>
+      <li><a href="blog.html" class="">Blog</a></li>
+      <li><a href="about.html" class="">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="theme-btn" aria-label="Toggle theme">☀</button>
+      <a href="audit.html" class="btn btn-p">Free Audit →</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mob" role="menu">
+  <a href="services.html">Services</a>
+  <a href="process.html">Process</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-cta">
+    <a href="audit.html" class="btn btn-p btn-lg" style="width:100%;justify-content:center">Run Free Audit →</a>
+  </div>
+</div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="eyebrow reveal">Free Tool</div>
+    <h1 class="reveal d1">Revenue Impact<br><em>Calculator.</em></h1>
+    <p class="ph-lead reveal d2">Model the financial upside of improved SEO rankings. See exactly what better visibility is worth to your business before spending a dollar.</p>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap">
+    <div class="calc-grid">
+      <div class="calc-card reveal">
+        <h3 style="font-family:var(--serif);margin-bottom:24px">Your Current Numbers</h3>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Monthly visitors</span><span class="calc-val" id="v-vis">800</span></div>
+          <input type="range" class="range" id="r-vis" min="100" max="10000" step="100" value="800">
+        </div>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Lead conversion rate</span><span class="calc-val" id="v-conv">3.0%</span></div>
+          <input type="range" class="range" id="r-conv" min="0.5" max="15" step="0.5" value="3">
+        </div>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Average job value</span><span class="calc-val" id="v-val">$1,200</span></div>
+          <input type="range" class="range" id="r-val" min="200" max="20000" step="100" value="1200">
+        </div>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Lead close rate</span><span class="calc-val" id="v-cls">40%</span></div>
+          <input type="range" class="range" id="r-cls" min="10" max="90" step="5" value="40">
+        </div>
+        <hr class="divider" style="margin:24px 0">
+        <h4 style="margin-bottom:18px">SEO Improvement Scenario</h4>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Traffic increase</span><span class="calc-val" id="v-tup">+40%</span></div>
+          <input type="range" class="range" id="r-tup" min="10" max="200" step="5" value="40">
+        </div>
+        <div class="calc-group">
+          <div class="calc-row"><span class="calc-lbl">Conversion improvement</span><span class="calc-val" id="v-cup">+1.0%</span></div>
+          <input type="range" class="range" id="r-cup" min="0" max="5" step="0.5" value="1">
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="calc-card" style="margin-bottom:16px">
+          <div class="eyebrow" style="margin-bottom:14px">Current State</div>
+          <div class="calc-res-row"><span>Monthly leads</span><span id="c-leads">24</span></div>
+          <div class="calc-res-row"><span>Monthly clients</span><span id="c-clients">10</span></div>
+          <div class="calc-res-row hi"><span>Monthly revenue</span><span id="c-rev">$11,520</span></div>
+        </div>
+        <div class="calc-card" style="border-color:var(--lime-d2);background:var(--lime-d);margin-bottom:16px">
+          <div class="eyebrow" style="margin-bottom:14px">After Optimization</div>
+          <div class="calc-res-row"><span>Monthly leads</span><span id="n-leads">37</span></div>
+          <div class="calc-res-row"><span>Monthly clients</span><span id="n-clients">15</span></div>
+          <div class="calc-res-row hi"><span>Monthly revenue</span><span id="n-rev">$17,760</span></div>
+          <hr class="divider" style="margin:16px 0">
+          <div style="text-align:center;padding:8px 0">
+            <div style="font-family:var(--mono);font-size:.7rem;color:var(--t2);margin-bottom:4px">Additional annual revenue</div>
+            <div class="res-num" id="annual-gain">$74,880</div>
+          </div>
+          <p style="font-family:var(--mono);font-size:.64rem;color:var(--t3);margin-top:14px">Based on your inputs. SEO improvements typically materialize over 3–6 months.</p>
+        </div>
+        <a href="audit.html" class="btn btn-p btn-lg" style="width:100%;justify-content:center">Run Free Audit →</a>
+        <a href="pricing.html" class="btn btn-g" style="width:100%;justify-content:center;margin-top:10px">View Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="img/logo.svg" alt="SytFix" class="footer-logo">
+        <p class="footer-tagline">Precision web auditing and SEO for local service businesses. Transparent process, real results.</p>
+        <div class="footer-contact">
+          <span>R. "Alex" Mitchell IV</span>
+          <a href="tel:2544476464">(254) 447-6464</a>
+          <span style="font-size:.72rem;color:var(--t3)">Waco, TX — Serving Nationwide</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#technical">Technical SEO</a></li>
+          <li><a href="services.html#local">Local SEO</a></li>
+          <li><a href="services.html#cwv">Core Web Vitals</a></li>
+          <li><a href="services.html#ai">AI Visibility</a></li>
+          <li><a href="services.html#content">Content Architecture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="audit.html">Free Site Audit</a></li>
+          <li><a href="calculator.html">Revenue Calculator</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SytFix. All rights reserved. Built in Waco, TX.</p>
+      <div class="footer-badges">
+        <span class="footer-badge footer-badge-live"><span class="dot-live"></span> All systems operational</span>
+        <span class="footer-badge">⚡ 98/100 Lighthouse</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "sytfix-maximum-scanner",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "check": "node -c api/scan.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {}
+}

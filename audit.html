@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Run a free website audit with SytFix. Get an instant snapshot of your technical SEO, speed, and local visibility issues.">
+<meta property="og:title" content="Free Site Audit | SytFix">
+<meta property="og:description" content="Run a free website audit with SytFix. Get an instant snapshot of your technical SEO, speed, and local visibility issues.">
+<meta property="og:type" content="website">
+<title>Free Site Audit | SytFix</title>
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+<div id="sf-loader" aria-hidden="true">
+  <svg class="ld-svg" viewBox="75 215 185 175" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0,600) scale(0.1,-0.1)">
+      <path class="ld-arc" fill="#F4F4EE" d="M1510 3680 l0 -40 45 0 45 0 0 40 0 40 -45 0 -45 0 0 -40z"/>
+      <path class="ld-arc" fill="#F4F4EE" d="M1335 3686 c-131 -42 -212 -92 -315 -196 -79 -78 -104 -111 -142 -185 -45 -89 -78 -183 -78 -224 0 -18 6 -21 39 -21 37 0 39 2 46 38 19 106 118 277 204 355 86 78 199 139 309 167 41 10 42 12 42 50 0 48 -5 49 -105 16z"/>
+      <path class="ld-arc" fill="#F4F4EE" d="M1682 3669 c3 -41 3 -42 57 -56 139 -35 300 -153 384 -281 47 -71 91 -172 102 -234 7 -37 8 -38 50 -38 l43 0 -13 58 c-62 263 -260 477 -527 568 -97 33 -100 32 -96 -17z"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="780" y="2820" width="45" height="40"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="2240" y="2821" width="45" height="39"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="1510" y="3840" width="45" height="40"/>
+      <rect class="ld-tick" fill="#F4F4EE" x="1514" y="2186" width="42" height="46"/>
+      <path class="ld-bob" fill="#B8EF1B" d="M1540 3266 l0 -296 -30 0 c-29 0 -30 -2 -30 -44 0 -39 -4 -46 -40 -71 l-40 -28 0 -128 0 -128 76 -108 c41 -59 78 -109 82 -110 4 -1 42 50 85 114 l77 116 0 121 0 121 -45 30 c-41 28 -45 33 -45 73 0 38 -2 42 -25 42 l-25 0 -2 292 c-3 270 -4 293 -20 296 -17 3 -18 -16 -18 -292z"/>
+    </g>
+  </svg>
+  <p class="ld-name">SytFix</p>
+  <p class="ld-tag">Web Auditing &amp; SEO</p>
+</div>
+<div id="sf-bar"></div>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-bg"></div>
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo" aria-label="SytFix home">
+      <img src="img/logo.svg" alt="SytFix" class="nav-logo-img">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="services.html" class="">Services</a></li>
+      <li><a href="process.html" class="">Process</a></li>
+      <li><a href="case-studies.html" class="">Case Studies</a></li>
+      <li><a href="pricing.html" class="">Pricing</a></li>
+      <li><a href="blog.html" class="">Blog</a></li>
+      <li><a href="about.html" class="">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="theme-btn" aria-label="Toggle theme">☀</button>
+      <a href="audit.html" class="btn btn-p">Free Audit →</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mob" role="menu">
+  <a href="services.html">Services</a>
+  <a href="process.html">Process</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-cta">
+    <a href="audit.html" class="btn btn-p btn-lg" style="width:100%;justify-content:center">Run Free Audit →</a>
+  </div>
+</div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="eyebrow reveal">Free Tool</div>
+    <h1 class="reveal d1">Run your free<br><em>site audit.</em></h1>
+    <p class="ph-lead reveal d2">Instant snapshot across 40 critical checks. See your top issues before spending a dollar.</p>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap">
+    <div class="audit-wrap">
+      <div class="audit-card reveal" id="audit-form">
+        <h3 style="margin-bottom:8px;font-family:var(--serif)">Enter your website URL</h3>
+        <p style="font-size:.88rem;margin-bottom:26px">We check technical SEO, speed, local signals, and AI visibility.</p>
+        <div class="f-group"><label class="f-label" for="audit-url">Website URL</label>
+          <input class="f-input" type="text" id="audit-url" placeholder="yourdomain.com" autocomplete="off"></div>
+        <div class="f-group"><label class="f-label" for="audit-industry">Industry</label>
+          <select class="f-select" id="audit-industry">
+            <option value="">Select your industry…</option>
+            <option>Legal Practice</option><option>HVAC &amp; Roofing</option>
+            <option>Plumbing &amp; Electrical</option><option>Dental &amp; Medical</option>
+            <option>Damage Restoration</option><option>Specialty Contractor</option><option>Other</option>
+          </select></div>
+        <div class="f-group"><label class="f-label" for="audit-city">Primary Service City</label>
+          <input class="f-input" type="text" id="audit-city" placeholder="e.g. Waco, TX"></div>
+        <div class="f-group"><label class="f-label" for="audit-email">Email (receive full report)</label>
+          <input class="f-input" type="email" id="audit-email" placeholder="you@yourbusiness.com"></div>
+        <div class="audit-checks">
+          <div class="audit-check">Technical SEO</div><div class="audit-check">Core Web Vitals</div>
+          <div class="audit-check">Local SEO signals</div><div class="audit-check">AI Visibility</div>
+          <div class="audit-check">Schema markup</div><div class="audit-check">Page speed</div>
+          <div class="audit-check">Mobile usability</div><div class="audit-check">Security headers</div>
+        </div>
+        <button class="btn btn-p btn-lg" id="audit-start" style="width:100%;justify-content:center">Run Free Audit →</button>
+        <p style="text-align:center;font-family:var(--mono);font-size:.64rem;color:var(--t3);margin-top:10px">No credit card. About 30 seconds.</p>
+      </div>
+      <div class="audit-card" id="audit-prog" style="display:none">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="font-size:2rem;display:inline-block;animation:spin 1.5s linear infinite">⚡</div>
+          <h3 style="margin:12px 0 6px;font-family:var(--serif)">Auditing your site…</h3>
+          <p style="font-size:.86rem">This takes about 30 seconds.</p>
+        </div>
+        <div class="prog-wrap"><div class="prog-fill" id="prog-fill"></div></div>
+        <div id="prog-steps">
+          <div class="prog-step" data-s="0">○ Crawlability &amp; indexation</div>
+          <div class="prog-step" data-s="1">○ Core Web Vitals</div>
+          <div class="prog-step" data-s="2">○ Local SEO signals</div>
+          <div class="prog-step" data-s="3">○ Schema markup</div>
+          <div class="prog-step" data-s="4">○ AI visibility</div>
+          <div class="prog-step" data-s="5">○ Generating report</div>
+        </div>
+      </div>
+      <div class="audit-card" id="audit-result" style="display:none">
+        <div style="display:flex;align-items:center;gap:22px;margin-bottom:28px;flex-wrap:wrap">
+          <div><div class="res-score" id="res-score">0</div>
+          <p style="font-family:var(--mono);font-size:.68rem;color:var(--t3);margin-top:3px">Health Score / 100</p></div>
+          <div style="flex:1;min-width:180px">
+            <p style="font-size:.9rem;margin-bottom:10px">Your site has <strong id="res-count">6 issues</strong> that may be costing you clients.</p>
+            <span class="tag">Needs Attention</span>
+          </div>
+        </div>
+        <div id="res-issues"></div>
+        <div class="upsell-box">
+          <h4 style="font-family:var(--serif);font-size:1.1rem;margin-bottom:8px">Get the full 200+ point report</h4>
+          <p style="font-size:.88rem;margin-bottom:18px">This snapshot covers the surface. The full audit goes 5× deeper — with a prioritized roadmap and revenue impact analysis for every finding.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="pricing.html" class="btn btn-p">Get Full Audit — $497 →</a>
+            <a href="contact.html" class="btn btn-g">Talk to Alex</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="img/logo.svg" alt="SytFix" class="footer-logo">
+        <p class="footer-tagline">Precision web auditing and SEO for local service businesses. Transparent process, real results.</p>
+        <div class="footer-contact">
+          <span>R. "Alex" Mitchell IV</span>
+          <a href="tel:2544476464">(254) 447-6464</a>
+          <span style="font-size:.72rem;color:var(--t3)">Waco, TX — Serving Nationwide</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#technical">Technical SEO</a></li>
+          <li><a href="services.html#local">Local SEO</a></li>
+          <li><a href="services.html#cwv">Core Web Vitals</a></li>
+          <li><a href="services.html#ai">AI Visibility</a></li>
+          <li><a href="services.html#content">Content Architecture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="audit.html">Free Site Audit</a></li>
+          <li><a href="calculator.html">Revenue Calculator</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SytFix. All rights reserved. Built in Waco, TX.</p>
+      <div class="footer-badges">
+        <span class="footer-badge footer-badge-live"><span class="dot-live"></span> All systems operational</span>
+        <span class="footer-badge">⚡ 98/100 Lighthouse</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

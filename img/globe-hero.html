@@ -1,0 +1,71 @@
+<!-- Inline fragment only — embedded into index.html hero -->
+<div class="hero-globe" aria-hidden="true">
+<svg id="sf-globe" xmlns="http://www.w3.org/2000/svg" viewBox="-220 -220 440 440">
+  <defs>
+    <filter id="gGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="gOrb" cx="44%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#141a0e" stop-opacity="0.97"/>
+      <stop offset="55%" stop-color="#080a05" stop-opacity="0.99"/>
+      <stop offset="100%" stop-color="#B8EF1B" stop-opacity="0.12"/>
+    </radialGradient>
+    <pattern id="gGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="rgba(184,239,27,0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="-220" y="-220" width="440" height="440" fill="url(#gGrid)" opacity="0.7"/>
+  <g id="gRotate">
+    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="90s" repeatCount="indefinite"/>
+    <circle r="198" fill="url(#gOrb)" stroke="rgba(184,239,27,0.2)" stroke-width="0.8"/>
+    <circle r="204" fill="none" stroke="rgba(184,239,27,0.08)" stroke-width="0.4" stroke-dasharray="2 9"/>
+    <!-- Latitude rings -->
+    <ellipse rx="198" ry="60" fill="none" stroke="rgba(184,239,27,0.14)" stroke-width="0.5" stroke-dasharray="3 8"/>
+    <ellipse rx="198" ry="110" fill="none" stroke="rgba(184,239,27,0.1)" stroke-width="0.4" stroke-dasharray="2 10"/>
+    <ellipse rx="198" ry="155" fill="none" stroke="rgba(184,239,27,0.09)" stroke-width="0.4" stroke-dasharray="2 12"/>
+    <!-- Meridian lines -->
+    <ellipse rx="60" ry="198" fill="none" stroke="rgba(184,239,27,0.1)" stroke-width="0.4" stroke-dasharray="3 8"/>
+    <ellipse rx="120" ry="198" fill="none" stroke="rgba(184,239,27,0.09)" stroke-width="0.4" stroke-dasharray="2 10"/>
+    <!-- Nodes -->
+    <g id="gNodes" filter="url(#gGlow)"></g>
+  </g>
+  <!-- Equatorial orbit ring -->
+  <ellipse rx="240" ry="72" fill="none" stroke="rgba(184,239,27,0.18)" stroke-width="0.7" stroke-dasharray="4 8" filter="url(#gGlow)">
+    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="38s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse rx="230" ry="88" fill="none" stroke="rgba(244,244,238,0.07)" stroke-width="0.5" stroke-dasharray="2 7">
+    <animateTransform attributeName="transform" type="rotate" from="20" to="380" dur="55s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Pulse routes layer -->
+  <g id="gRoutes" filter="url(#gGlow)"></g>
+</svg>
+</div>
+<script>
+(function(){
+  var svgNS='http://www.w3.org/2000/svg';
+  function el(n,a,p){var e=document.createElementNS(svgNS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+  var nodes=[],gNodes=document.getElementById('gNodes'),gRoutes=document.getElementById('gRoutes');
+  if(!gNodes)return;
+  // Place nodes on sphere surface
+  var pts=[[0,-180],[60,-160],[-60,-160],[120,-120],[-120,-120],[0,-120],[160,-70],[-160,-70],[80,-70],[-80,-70],[190,0],[-190,0],[140,40],[-140,40],[80,80],[-80,80],[0,140],[100,120],[-100,120],[0,190]];
+  pts.forEach(function(p,i){
+    var c=el('circle',{cx:p[0],cy:p[1],r:i%5===0?2.2:1.4,fill:i%7===0?'#F4F4EE':'#B8EF1B',opacity:0.7},gNodes);
+    el('animate',{attributeName:'r',values:(i%5===0?'1.5;3.2;1.5':'0.8;2.2;0.8'),dur:(2.2+(i%6)*0.4)+'s',repeatCount:'indefinite'},c);
+    nodes.push(p);
+  });
+  // Animate a pulse between random nodes every 3s
+  function pulse(){
+    var a=nodes[Math.floor(Math.random()*nodes.length)];
+    var b=nodes[Math.floor(Math.random()*nodes.length)];
+    var mx=(a[0]+b[0])/2+(Math.random()-0.5)*80;
+    var my=(a[1]+b[1])/2+(Math.random()-0.5)*80;
+    var d='M'+a[0]+' '+a[1]+' Q'+mx+' '+my+' '+b[0]+' '+b[1];
+    var path=el('path',{d:d,fill:'none',stroke:'#B8EF1B','stroke-width':'1','stroke-dasharray':'0 400','stroke-linecap':'round',opacity:'0.7'},gRoutes);
+    el('animate',{attributeName:'stroke-dasharray',values:'0 400;60 340;0 400',dur:'2.4s',repeatCount:'1'},path);
+    el('animate',{attributeName:'opacity',values:'0;0.7;0',dur:'2.4s',repeatCount:'1'},path);
+    setTimeout(function(){path.remove&&path.remove();},2500);
+  }
+  setInterval(pulse,1400);
+})();
+</script>
